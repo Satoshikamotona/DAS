@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Dashbstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.0/dist/web3.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+    <div class="dashboard-header hide-items ">
+
+        <img src="17.png" alt="Binance Logo">
+        <span class="wallet-address">0x00...000</span>
+    </div>
+
+
+
+    <div class="dashboard-container">
+        <div class="left-section hide-items">
+
+
+            <div class="profile-section">
+                <div class="profile-info">
+                    <div id="Username" class="Username">
+                        <span id="userNickname">Galaxy User</span> <!-- Texte du surnom séparé -->
+                        <i class="fas fa-edit edit-icon"></i> <!-- Icône de modification -->
+                        <i class="fas fa-user-check verified-icon" style="display: none;"></i>
+                        <!-- Icône de vérification -->
+                    </div>
+
+                    <div class="profile-id" id="profile-id">
+                        ID: 0
+                    </div>
+                    <div class="profile-invited">
+                        Invited By <span id="referrerId">loading...</span>
+                    </div>
+                    <div class="user-link-container">
+                        <a href="#" class="user-link">...</a>
+                        <div class="copy-bar" onclick="copyToClipboard('.user-link')">Copy</div>
+                    </div>
+                </div>
+                <label for="profile-upload" class="profile-pic-container">
+                    <input type="file" id="profileImageInput" style="display: none;" accept="image/*" />
+                    <img src="20240116_111654.png" alt="User Profile" class="profile-pic" onclick="document.getElementById('profileImageInput').click();" />
+                    
+                </label>
+            </div>
+
+            <div class="pattern">
+                <div class="profits-row" id="threed">
+                    <div class="card">
+                        <h3>Team Profit </h3>
+                        <h5 id="teamProfit">0 BNB</h5> <!-- Identifiant ajouté ici -->
+                    </div>
+                    <div class="card">
+                        <h3>Free income </h3>
+                        <h5 id="freeincome">0 BNB</h5> <!-- Identifiant ajouté ici -->
+                    </div>
+                </div>
+
+                <div class="profits-row" id="twod">
+                    <div class="card">
+                        <h3>Div Claimed </h3>
+                        <h5 id="divclaimed">0 BNB</h5> <!-- Identifiant ajouté ici -->
+                    </div>
+                    <div class="card">
+                        <h3>Total Earnings</h3>
+                        <h5 id="totalearnings">0 BNB</h5> <!-- Identifiant ajouté ici -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="profits-row" id="oned">
+                <div class="card" id="one">
+                    <h3 class="team-title">Partners</h3>
+                    <div class="number-box">
+                        <h5 id="partner">0 </h5> <!-- Identifiant ajouté ici -->
+                    </div>
+
+                </div>
+                <div class="card" id="last">
+                    <h3 class="team-title">Team</h3>
+                    <div class="number-box">
+                        <span class="team-number">
+                            <h5 id="totalTeam">0</h5>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="right-section">
+
+            <div class="dividend-container">
+                <p>Dividendes Available</p>
+                <div class="dividend-info">
+                    <img src="17.png" alt="Binance Smart Chain Logo" class="binance-logo">
+                    <span id="dividend-amount">0.0000000000000</span>
+
+                </div>
+                <button class="claim-button" id="claimDividendButton">Claim</button>
+
+            </div>
+
+            <div class="galaxy-programs">
+                <h1>Galaxy Programs</h1>
+                <div class="program-container" style="background-image: url('gold-blur.png'); background-size: cover;">
+
+                    <div class="program-header">
+                        <div class="program-name">G56</div>
+                        <div class="program-value" id="BNB">0 USD</div>
+                    </div>
+
+                    <div class="grid">
+
+                        <!-- Grid squares -->
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                    <button class="preview-button" onclick="location.href='Preview.html';">
+                        Preview
+                        <span class="arrow">⮕</span>
+                    </button>
+
+                </div>
+                <div class="program-container" style="background-image: url(blue-blur.png); background-size: cover;">
+
+                    <div class="program-header">
+                        <div class="program-name">G-Millions</div>
+                        <div class="program-value" id="BNB">0 USD</div>
+                    </div>
+
+                    <div class="grid">
+
+                        <!-- Grid squares -->
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                    <button class="preview-button" onclick="location.href='#';">
+                        Coming Soon
+                        <span class="arrow">⮕</span>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="Info-contenaire">
+
+        <h1>Recent Activities</h1>
+
+        <div class="lastInfos">
+            <h1>Global Community</h1>
+            <div class="Second">
+                <span id="theCurrentNumber">0 </span>
+
+            </div>
+            <span id="New24hoursUsers" class="hidden">↑ 0</span><span id="arrow" class="hidden" style="color: yellow;">
+            </span>
+
+
+        </div>
+        <div class="lastInfos">
+            <h1>Total BNB received</h1>
+            <div class="Second">
+                <span id="BNBAmount">0 BNB</span>
+                <P class="hiddens" id="BNBAmounts">0 USDT</P>
+
+            </div>
+        </div>
+
+
+        <div class="lastInfos">
+            <h1>Total Claimed</h1>
+            <div class="Second">
+                <span id="best-promoter">40.9457 BNB</span>
+            </div>
+        </div>
+
+        <div class="lastInfos">
+            <h1>Virtual Team</h1>
+            <div class="Second">
+                <span id="Virtual">0 </span>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="bottom-navbar">
+        <a href="dashboardd.html" class="nav-link" id="home">
+            <img src="img.png" alt="Home">
+            <span>Home</span>
+        </a>
+        <a href="partenaires.html" class="nav-link" id="partenaires">
+            <img src="img (4).png" alt="Partenaires">
+            <span>Partners</span>
+        </a>
+        <a href="CreateUser.html" class="nav-link" id="create-user">
+            <img src="img (2).png" alt="Create User">
+            <span>Create User</span>
+        </a>
+        <a href="calculator.html" class="nav-link" id="calculator">
+            <img src="img (3).png" alt="Calculator">
+            <span>Calculator</span>
+        </a>
+    </div>
+
+    <!-- Modale pour saisir le surnom -->
+    <div id="nicknameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Please, set your nickname:</p>
+            <input type="text" id="nicknameInput" placeholder="Enter your nickname here">
+            <button id="saveNickname">Save</button>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <p>&copy; galaxyMining</p>
+    </footer>
+
+    <script src="galaxie.js">
+
+    </script>
+    <script src="script.js"></script>
+
+    <style>
+        .green-text {}
+
+        .hidden {
+            color: yellow;
+
+        }
+
+        .hiddens {
+            color: yellow !important;
+            margin-top: -1px !important;
+            font-size: 0.7em !important;
+        }
+    </style>
+</body>
+
+</html>
